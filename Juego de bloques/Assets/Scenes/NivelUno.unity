@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 8842096}
   - component: {fileID: 8842097}
   - component: {fileID: 8842098}
+  - component: {fileID: 8842099}
+  - component: {fileID: 8842100}
   m_Layer: 0
   m_Name: GestorDelJuego
   m_TagString: Untagged
@@ -160,6 +162,7 @@ MonoBehaviour:
   personaje: {fileID: 1956136090}
   gameOver: {fileID: 732163382}
   siguienteNivel: {fileID: 8842098}
+  sonidosFinPartida: {fileID: 8842100}
 --- !u!4 &8842095
 Transform:
   m_ObjectHideFlags: 0
@@ -188,6 +191,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtPuntos: {fileID: 435716242}
+  contenedorBloques: {fileID: 840462862}
+  nivelCompletado: {fileID: 898829659}
+  juegoCompletado: {fileID: 1211255489}
+  siguienteNivel: {fileID: 8842098}
+  pelota: {fileID: 1563003060}
+  personaje: {fileID: 1956136090}
+  sonidosFinPartida: {fileID: 8842100}
 --- !u!114 &8842097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,8 +223,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60d4299a144ebe4cb0af8569fe52673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivelACargar: Inicio
+  nivelACargar: NivelDos
   retraso: 5
+--- !u!82 &8842099
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842093}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 20ba4896fe47cc74cb02efc59b3da82c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8842100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd65c3e1a23dd6f46af9fed4cca90229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 8842099}
+  completado: {fileID: 8300000, guid: e636c8f5c024fbb4a8365353928e0e33, type: 3}
+  gameOver: {fileID: 8300000, guid: 4b9daf261696c0344bd3521865f7364f, type: 3}
 --- !u!1 &33459382
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +419,7 @@ GameObject:
   - component: {fileID: 41106982}
   m_Layer: 0
   m_Name: Bloque (29)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,7 +531,7 @@ GameObject:
   - component: {fileID: 54238055}
   m_Layer: 0
   m_Name: Bloque (3)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -627,7 +748,7 @@ GameObject:
   - component: {fileID: 225019131}
   m_Layer: 0
   m_Name: Bloque (12)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +860,7 @@ GameObject:
   - component: {fileID: 226668643}
   m_Layer: 0
   m_Name: Bloque (20)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -885,7 +1006,7 @@ GameObject:
   - component: {fileID: 318555609}
   m_Layer: 0
   m_Name: Bloque (5)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -997,7 +1118,7 @@ GameObject:
   - component: {fileID: 318589992}
   m_Layer: 0
   m_Name: Bloque (8)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1109,7 +1230,7 @@ GameObject:
   - component: {fileID: 325813831}
   m_Layer: 0
   m_Name: Bloque (2)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1317,7 +1438,7 @@ GameObject:
   - component: {fileID: 371731951}
   m_Layer: 0
   m_Name: Bloque (27)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,7 +1646,7 @@ GameObject:
   - component: {fileID: 697692890}
   m_Layer: 0
   m_Name: Bloque (19)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1637,7 +1758,7 @@ GameObject:
   - component: {fileID: 703707232}
   m_Layer: 0
   m_Name: Bloque (23)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2212,7 +2333,7 @@ GameObject:
   - component: {fileID: 1126398005}
   m_Layer: 0
   m_Name: Bloque (22)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2324,7 +2445,7 @@ GameObject:
   - component: {fileID: 1137192037}
   m_Layer: 0
   m_Name: Bloque (28)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2436,7 +2557,7 @@ GameObject:
   - component: {fileID: 1168981886}
   m_Layer: 0
   m_Name: Bloque (10)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2548,7 +2669,7 @@ GameObject:
   - component: {fileID: 1194924162}
   m_Layer: 0
   m_Name: Bloque (17)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2869,7 +2990,7 @@ GameObject:
   - component: {fileID: 1291855721}
   m_Layer: 0
   m_Name: Bloque
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3093,7 +3214,7 @@ GameObject:
   - component: {fileID: 1353194767}
   m_Layer: 0
   m_Name: Bloque (6)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3205,7 +3326,7 @@ GameObject:
   - component: {fileID: 1399995540}
   m_Layer: 0
   m_Name: Bloque (9)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3317,7 +3438,7 @@ GameObject:
   - component: {fileID: 1475136102}
   m_Layer: 0
   m_Name: Bloque (14)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3429,7 +3550,7 @@ GameObject:
   - component: {fileID: 1486477846}
   m_Layer: 0
   m_Name: Bloque (13)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3541,7 +3662,7 @@ GameObject:
   - component: {fileID: 1503924996}
   m_Layer: 0
   m_Name: Bloque (15)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3652,6 +3773,9 @@ GameObject:
   - component: {fileID: 1563003055}
   - component: {fileID: 1563003059}
   - component: {fileID: 1563003060}
+  - component: {fileID: 1563003063}
+  - component: {fileID: 1563003062}
+  - component: {fileID: 1563003061}
   m_Layer: 0
   m_Name: Pelota
   m_TagString: Untagged
@@ -3768,6 +3892,212 @@ MonoBehaviour:
   rig: {fileID: 1563003059}
   velocidadInicial: 600
   personaje: {fileID: 2134374474}
+--- !u!114 &1563003061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563003054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c9f1daa19e5a04d9e8b70f27c2a412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rebote: {fileID: 1563003063}
+  punto: {fileID: 1563003062}
+--- !u!82 &1563003062
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563003054}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: be5eb151e57c288499bc44f9e787dd1f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1563003063
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563003054}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7934d11a656b84c44ab6c0c2d71f9d06, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1575320054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3880,7 +4210,7 @@ GameObject:
   - component: {fileID: 1604407433}
   m_Layer: 0
   m_Name: Bloque (16)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4089,7 +4419,7 @@ GameObject:
   - component: {fileID: 1741497251}
   m_Layer: 0
   m_Name: Bloque (1)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4201,7 +4531,7 @@ GameObject:
   - component: {fileID: 1741794621}
   m_Layer: 0
   m_Name: Bloque (26)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4313,7 +4643,7 @@ GameObject:
   - component: {fileID: 1779965953}
   m_Layer: 0
   m_Name: Bloque (4)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4425,7 +4755,7 @@ GameObject:
   - component: {fileID: 1907359028}
   m_Layer: 0
   m_Name: Bloque (18)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4666,7 +4996,7 @@ GameObject:
   - component: {fileID: 1956858963}
   m_Layer: 0
   m_Name: Bloque (11)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4778,7 +5108,7 @@ GameObject:
   - component: {fileID: 2085790483}
   m_Layer: 0
   m_Name: Bloque (7)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4890,7 +5220,7 @@ GameObject:
   - component: {fileID: 2093483482}
   m_Layer: 0
   m_Name: Bloque (25)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5002,7 +5332,7 @@ GameObject:
   - component: {fileID: 2120322309}
   m_Layer: 0
   m_Name: Bloque (24)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5146,7 +5476,7 @@ GameObject:
   - component: {fileID: 2147035953}
   m_Layer: 0
   m_Name: Bloque (21)
-  m_TagString: Untagged
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

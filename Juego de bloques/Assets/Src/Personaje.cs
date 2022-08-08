@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    public float velocidad = 15f;
+    public float velocidad = 600f;
     private Vector3 posicionInicial;
     // Start is called before the first frame update
     void Start()

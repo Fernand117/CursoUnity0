@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ColisionBloque : MonoBehaviour
@@ -10,6 +8,7 @@ public class ColisionBloque : MonoBehaviour
     {
         Instantiate(particulas, transform.position, Quaternion.identity);
         puntos.GanarPunto();
+        transform.SetParent(null);
         Destroy(gameObject);
     }
 }

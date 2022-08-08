@@ -356,6 +356,8 @@
 "Assets/Src/Personaje.cs"
 "Assets/Src/Puntos.cs"
 "Assets/Src/SiguienteNivel.cs"
+"Assets/Src/SoinidosPelota.cs"
+"Assets/Src/SonidosFinPartida.cs"
 "Assets/Src/Vidas.cs"
 -langversion:9.0
 

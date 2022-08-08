@@ -10,6 +10,8 @@ public class Vidas : MonoBehaviour
     
     public GameObject gameOver;
     public SiguienteNivel siguienteNivel;
+
+    public SonidosFinPartida sonidosFinPartida;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class Vidas : MonoBehaviour
         ActualizarMarcador();
         if (totalVidas <= 0)
         {
+            sonidosFinPartida.GameOver();
             gameOver.SetActive(true);
             pelota.DetenerMovimiento();
             personaje.enabled = false;
